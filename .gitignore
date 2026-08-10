@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.swo
+.DS_Store
+venv/
+.env
+.envrc
+*.log
+*.ckpt
