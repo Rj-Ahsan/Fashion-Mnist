@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vercel Python Deployment
 
 This repository is set up for deployment on Vercel using a Python serverless function.
@@ -38,3 +39,7 @@ The response will contain the top predictions and probabilities.
 ## Important note
 
 TensorFlow training is not well suited for Vercel serverless functions because of large package size and runtime limits. Use this deployment scaffold for inference only, and train the model locally before adding `model.h5` to the repository.
+=======
+# Fashion-Mnist
+Fashion-MNIST classification using deep learning. 60K training + 10K test images of 10 clothing categories. Achieves approx 92%+ test accuracy with CNN.
+>>>>>>> cd5bac868acc969345e14df8ba5ac1079d38c5bb
