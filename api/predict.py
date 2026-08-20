@@ -7,7 +7,7 @@ import os
 MODEL_PATH = os.path.join(
     os.path.dirname(os.path.dirname(__file__)),
     "model",
-    "decision_tree.pkl"
+    "CNN.pkl"
 )
 
 model = joblib.load(MODEL_PATH)
