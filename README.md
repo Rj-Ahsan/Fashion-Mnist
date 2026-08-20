@@ -1,45 +1,149 @@
-<<<<<<< HEAD
-# Vercel Python Deployment
+# 👕 Fashion-MNIST Image Classification
 
-This repository is set up for deployment on Vercel using a Python serverless function.
+A Deep Learning project that uses a **Convolutional Neural Network (CNN)** to classify Fashion-MNIST images into 10 different clothing categories.
 
-## Included files
+The model is trained on **60,000 training images** and evaluated on **10,000 test images**, achieving approximately **92%+ test accuracy**.
 
-- `requirements.txt` — Python dependencies for Vercel.
-- `vercel.json` — Vercel configuration for the Python function.
-- `api/index.py` — Vercel API endpoint for model inference.
-- `.gitignore` — ignores common Python artifacts.
+## 🚀 Project Overview
 
-## Deploy steps
+Fashion-MNIST is a dataset of grayscale images representing different types of clothing and fashion products.
 
-1. Push this folder to GitHub.
-2. Connect the repository to Vercel.
-3. Vercel will detect the Python runtime using `requirements.txt`.
-4. The deployed function is available at `/api/index`.
+The objective of this project is to build a CNN capable of automatically identifying the category of a given clothing image.
 
-## Model setup
+## 📊 Dataset
 
-- Add a trained Keras model file named `model.h5` to the repository root.
-- The endpoint expects Fashion MNIST grayscale images resized to `28x28`.
-- If `model.h5` is missing, the deployed endpoint will return a load error.
+The Fashion-MNIST dataset contains:
 
-## Example request
+* **60,000** training images
+* **10,000** test images
+* Image size: **28 × 28 pixels**
+* Grayscale images
+* **10 classes**
 
-Send a POST request to `/api/index` with JSON:
+### Classes
 
-```json
-{
-  "image": "<base64-encoded-image>",
-  "top_k": 3
-}
+| Label | Category      |
+| ----- | ------------- |
+| 0     | T-shirt / Top |
+| 1     | Trouser       |
+| 2     | Pullover      |
+| 3     | Dress         |
+| 4     | Coat          |
+| 5     | Sandal        |
+| 6     | Shirt         |
+| 7     | Sneaker       |
+| 8     | Bag           |
+| 9     | Ankle Boot    |
+
+## 🧠 Model
+
+A **Convolutional Neural Network (CNN)** is used for image classification.
+
+The general workflow is:
+
+```text
+Fashion-MNIST Dataset
+        ↓
+Data Preprocessing
+        ↓
+Image Normalization
+        ↓
+CNN Model
+        ↓
+Model Training
+        ↓
+Model Evaluation
+        ↓
+Prediction
 ```
 
-The response will contain the top predictions and probabilities.
+## 📈 Results
 
-## Important note
+The CNN achieves approximately:
 
-TensorFlow training is not well suited for Vercel serverless functions because of large package size and runtime limits. Use this deployment scaffold for inference only, and train the model locally before adding `model.h5` to the repository.
-=======
-# Fashion-Mnist
-Fashion-MNIST classification using deep learning. 60K training + 10K test images of 10 clothing categories. Achieves approx 92%+ test accuracy with CNN.
->>>>>>> cd5bac868acc969345e14df8ba5ac1079d38c5bb
+**92%+ Test Accuracy**
+
+The model can predict the clothing category from unseen Fashion-MNIST images.
+
+## 🛠️ Technologies Used
+
+* Python
+* TensorFlow
+* Keras
+* NumPy
+* Matplotlib
+* Jupyter Notebook
+
+## 📂 Project Structure
+
+```text
+Fashion-Mnist/
+│
+├── api/
+│   └── index.py
+│
+├── Fashion-Mnist.ipynb
+├── train.py
+├── requirements.txt
+├── vercel.json
+├── .gitignore
+└── README.md
+```
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Rj-Ahsan/Fashion-Mnist.git
+cd Fashion-Mnist
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## ▶️ Run the Project
+
+Open the Jupyter Notebook:
+
+```bash
+jupyter notebook Fashion-Mnist.ipynb
+```
+
+You can also train the model using:
+
+```bash
+python train.py
+```
+
+## 🌐 Deployment
+
+The repository includes a **Vercel serverless API setup** for model inference.
+
+The API accepts a Fashion-MNIST image and returns the predicted classes and probabilities.
+
+> **Note:** TensorFlow model training is intended to be performed locally. The Vercel setup is designed primarily for inference/deployment.
+
+## 🔮 Future Improvements
+
+* Improve CNN architecture
+* Add data augmentation
+* Experiment with transfer learning
+* Add a web-based prediction interface
+* Improve deployment architecture
+* Add model performance visualizations
+
+## 👨‍💻 Author
+
+**Ahsan Tanveer**
+
+BS Artificial Intelligence | AI/ML Engineer
+
+GitHub: [@Rj-Ahsan](https://github.com/Rj-Ahsan)
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star!
